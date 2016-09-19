@@ -1,0 +1,22 @@
+- name: Setting up base env
+  apt: name={{item}} state=latest
+  with_items:
+    - build-essential
+    - ssh
+    - lzop
+    - git
+    - rsync
+    - curl
+    - python-dev
+    - python-setuptools
+    - libcurl4-openssl-dev
+
+- name: Easy install PIP
+  easy_install: name=pip state=latest
+
+- name: Pip install virtualenv dateutil
+  pip: name={{item}}
+  with_items:
+    - virtualenv
+    - virtualenvwrapper
+    - python-dateutil

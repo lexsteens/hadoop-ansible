@@ -1,0 +1,9 @@
+---
+- hosts: all
+  roles:
+  - role: apt-update
+    tags: ["system", "update"]
+  - role: hadoop-dep
+    tags: ["hadoop", "dep"]
+  - role: hadoop-base
+    tags: ["hadoop", "base", "hdfs"]
