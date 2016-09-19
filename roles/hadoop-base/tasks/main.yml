@@ -1,3 +1,0 @@
-- group: name=hadoop
-
-- user: name=hadoop groups=hadoop append=yes

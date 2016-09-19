@@ -1,0 +1,5 @@
+- group: name=hadoop
+
+- user: name=hadoop groups=hadoop append=yes generate_ssh_key=yes
+
+- authorized_key: user=hadoop key="{{ lookup('file', '/home/hadoop/.ssh/id_rsa.pub') }}"
