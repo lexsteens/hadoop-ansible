@@ -2,8 +2,14 @@
 - hosts: all
   roles:
   - role: apt-update
-    tags: ["system", "update"]
+    tags: ["system", "update", "dep"]
+  - role: java
+    tags: ["system", "java", "dep"]
+  - role: disable_ipv6
+    tags: ["system", "disable_ipv6", "dep"]
   - role: hadoop-dep
     tags: ["hadoop", "dep"]
   - role: hadoop-user
     tags: ["hadoop", "user"]
+  - role: hdfs
+    tags: ["hadoop", "hdfs"]

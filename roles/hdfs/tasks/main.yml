@@ -1,0 +1,9 @@
+- name: Download Hadoop
+  get_url:
+    url: "{{ hadoop_link }}"
+    dest: /etc/hadoop.tar.gz
+
+- name: Unpack Hadoop
+  unarchive:
+     src: /tmp/hadoop.tar.gz
+     dest: /srv
