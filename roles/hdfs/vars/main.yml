@@ -1,1 +1,2 @@
-hadoop_link: http://apache.belnet.be/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
+hadoop_version: hadoop-2.7.3
+hadoop_link: http://apache.belnet.be/hadoop/common/hadoop-2.7.3/{{ hadoop_version }}.tar.gz
