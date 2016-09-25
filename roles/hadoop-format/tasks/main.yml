@@ -1,0 +1,7 @@
+- file: path=/var/app/hadoop/data state=directory owner=hadoop group=hadoop mode=0770
+
+- name: Format namenode
+  command: /srv/hadoop/bin/hadoop namenode -format > /tmp/hadoop-format.log
+  become: true
+  become_method: su
+  become_user: hadoop

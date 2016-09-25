@@ -17,3 +17,5 @@
     tags: ["add-hadoop-user"]
   - role: hadoop-config
     tags: ["hadoop", "hadoop-config"]
+  - role: hadoop-format
+    tags: ["hadoop-format"]

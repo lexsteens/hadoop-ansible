@@ -7,6 +7,9 @@
 - copy:
     src: "{{ item }}"
     dest: /srv/hadoop/etc/hadoop/
+    owner: hadoop
+    group: hadoop
+    mode: 0750
   with_items:
     - core-site.xml
     - mapred-site.xml
