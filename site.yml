@@ -15,3 +15,5 @@
     tags: ["hadoop", "hadoop-base"]
   - role: add-hadoop-user
     tags: ["add-hadoop-user"]
+  - role: hadoop-config
+    tags: ["hadoop", "hadoop-config"]

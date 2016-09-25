@@ -1,0 +1,14 @@
+
+- lineinfile:
+    dest: /srv/hadoop/etc/hadoop/hadoop-env.sh
+    regexp: "^export JAVA_HOME"
+    line: "export JAVA_HOME=/usr/lib/jvm/java-8-oracle"
+
+- copy:
+    src: "{{ item }}"
+    dest: /srv/hadoop/etc/hadoop/
+  with_items:
+    - core-site.xml
+    - mapred-site.xml
+    - hdfs-site.xml
+    - yarn-site.xml
