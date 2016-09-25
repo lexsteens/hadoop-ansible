@@ -1,4 +1,4 @@
-- name: ensure required packages are installed for Java 8
+- name: ensure required packages are installed for Java
   apt: name={{item}} state=latest update_cache=yes
   with_items:
     - python-software-properties
@@ -12,8 +12,8 @@
 - name: Update APT package cache
   action: apt update_cache=yes
 
-- name: Install Java 8
+- name: Install Java
   action: apt pkg=oracle-java8-installer state=latest install_recommends=yes
 
-- name: Set Java 8 Env
+- name: Set Java Env
   action: apt pkg=oracle-java8-set-default state=latest install_recommends=yes

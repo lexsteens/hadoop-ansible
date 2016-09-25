@@ -1,0 +1,6 @@
+
+- user: name="{{ user }}" groups=hadoop append=yes
+
+- lineinfile: dest=/home/{{ user }}/.profile regexp="^export HADOOP_HOME" line="export HADOOP_HOME=/srv/hadoop"
+- lineinfile: dest=/home/{{ user }}/.profile regexp="^export PATH" line="export PATH=$PATH:$HADOOP_HOME/bin"
+- lineinfile: dest=/home/{{ user }}/.profile regexp="^export JAVA_HOME" line="export JAVA_HOME=/usr/lib/jvm/java-8-oracle"

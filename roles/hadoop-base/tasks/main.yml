@@ -1,0 +1,25 @@
+- name: Download Hadoop
+  get_url:
+    url: "{{ hadoop_link }}"
+    dest: /tmp/hadoop.tar.gz
+
+- name: Unpack Hadoop
+  unarchive:
+     src: /tmp/hadoop.tar.gz
+     dest: /srv
+     owner: hadoop
+     group: hadoop
+     mode: 0750
+
+- name: Create symlink
+  file:
+    src: /srv/{{ hadoop_version }}
+    dest: /srv/hadoop
+    state: link
+    owner: hadoop
+    group: hadoop
+    mode: 0750
+
+- lineinfile: dest=/home/hadoop/.bashrc regexp="^export HADOOP_HOME" line="export HADOOP_HOME=/srv/hadoop"
+- lineinfile: dest=/home/hadoop/.bashrc regexp="^export PATH" line="export PATH=$PATH:$HADOOP_HOME/bin"
+- lineinfile: dest=/home/hadoop/.bashrc regexp="^export JAVA_HOME" line="export JAVA_HOME=/usr/lib/jvm/java-8-oracle"

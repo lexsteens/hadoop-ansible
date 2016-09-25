@@ -11,5 +11,7 @@
     tags: ["hadoop", "dep"]
   - role: hadoop-user
     tags: ["hadoop", "user"]
-  - role: hdfs
-    tags: ["hadoop", "hdfs"]
+  - role: hadoop-base
+    tags: ["hadoop", "hadoop-base"]
+  - role: add-hadoop-user
+    tags: ["add-hadoop-user"]
